@@ -22,7 +22,9 @@ trait IVerifySignature<TContractState> {
         payload: Array<u8>,
         parity: bool,
         r: u256,
-        s: u256
+        s: u256,
+        px: u256,
+        py: u256,
     ) -> bool;
 }
 
@@ -66,7 +68,9 @@ mod verifySignature {
             payload: Array<u8>,
             parity: bool,
             r: u256,
-            s: u256
+            s: u256,
+            px: u256,
+            py: u256,
         ) -> bool {
               
               sxg(
@@ -77,7 +81,9 @@ mod verifySignature {
                 payload,
                 parity,
                 r,
-                s
+                s,
+                px,
+                py,
             )
         }
 

@@ -13,3 +13,10 @@ starkli deploy \
 
 
 SXG VERFIFIER:= https://sepolia.voyager.online/contract/0x03f31b28b57947f14817755194cfe9e9fd2d83f27b0bb0d00c6033334923d67e#readContract
+
+
+starkli declare \
+  --keystore starkli-wallet/keystore.json \
+  --account starkli-wallet/account.json \
+  --watch /home/reth/sxg-cairo/target/dev/sxg_MyToken.contract_class.json \
+  --rpc https://starknet-sepolia.g.alchemy.com/starknet/version/rpc/v0_7/L7olBYa0p1r4KX8hExzoclXd4LDyQ277
