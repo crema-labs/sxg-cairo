@@ -1,0 +1,199 @@
+[
+  {
+    "type": "impl",
+    "name": "VerifySignature",
+    "interface_name": "sxg::sxg_verifier::IVerifySignature"
+  },
+  {
+    "type": "struct",
+    "name": "core::integer::u256",
+    "members": [
+      {
+        "name": "low",
+        "type": "core::integer::u128"
+      },
+      {
+        "name": "high",
+        "type": "core::integer::u128"
+      }
+    ]
+  },
+  {
+    "type": "enum",
+    "name": "core::bool",
+    "variants": [
+      {
+        "name": "False",
+        "type": "()"
+      },
+      {
+        "name": "True",
+        "type": "()"
+      }
+    ]
+  },
+  {
+    "type": "struct",
+    "name": "core::starknet::secp256_trait::Signature",
+    "members": [
+      {
+        "name": "r",
+        "type": "core::integer::u256"
+      },
+      {
+        "name": "s",
+        "type": "core::integer::u256"
+      },
+      {
+        "name": "y_parity",
+        "type": "core::bool"
+      }
+    ]
+  },
+  {
+    "type": "struct",
+    "name": "core::starknet::eth_address::EthAddress",
+    "members": [
+      {
+        "name": "address",
+        "type": "core::felt252"
+      }
+    ]
+  },
+  {
+    "type": "interface",
+    "name": "sxg::sxg_verifier::IVerifySignature",
+    "items": [
+      {
+        "type": "function",
+        "name": "get_signature",
+        "inputs": [
+          {
+            "name": "r",
+            "type": "core::integer::u256"
+          },
+          {
+            "name": "s",
+            "type": "core::integer::u256"
+          },
+          {
+            "name": "v",
+            "type": "core::integer::u32"
+          }
+        ],
+        "outputs": [
+          {
+            "type": "core::starknet::secp256_trait::Signature"
+          }
+        ],
+        "state_mutability": "view"
+      },
+      {
+        "type": "function",
+        "name": "verify_eth_signature",
+        "inputs": [
+          {
+            "name": "eth_address",
+            "type": "core::starknet::eth_address::EthAddress"
+          },
+          {
+            "name": "msg_hash",
+            "type": "core::integer::u256"
+          },
+          {
+            "name": "r",
+            "type": "core::integer::u256"
+          },
+          {
+            "name": "s",
+            "type": "core::integer::u256"
+          },
+          {
+            "name": "v",
+            "type": "core::integer::u32"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "view"
+      },
+      {
+        "type": "function",
+        "name": "recover_public_key",
+        "inputs": [
+          {
+            "name": "eth_address",
+            "type": "core::starknet::eth_address::EthAddress"
+          },
+          {
+            "name": "msg_hash",
+            "type": "core::integer::u256"
+          },
+          {
+            "name": "r",
+            "type": "core::integer::u256"
+          },
+          {
+            "name": "s",
+            "type": "core::integer::u256"
+          },
+          {
+            "name": "v",
+            "type": "core::integer::u32"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "view"
+      },
+      {
+        "type": "function",
+        "name": "sxg_verifier",
+        "inputs": [
+          {
+            "name": "finalPayload",
+            "type": "core::array::Array::<core::integer::u8>"
+          },
+          {
+            "name": "dataToVerify",
+            "type": "core::array::Array::<core::integer::u8>"
+          },
+          {
+            "name": "dataToVerifyStartIndex",
+            "type": "core::integer::u32"
+          },
+          {
+            "name": "integrityStartIndex",
+            "type": "core::integer::u32"
+          },
+          {
+            "name": "payload",
+            "type": "core::array::Array::<core::integer::u8>"
+          },
+          {
+            "name": "parity",
+            "type": "core::bool"
+          },
+          {
+            "name": "r",
+            "type": "core::integer::u256"
+          },
+          {
+            "name": "s",
+            "type": "core::integer::u256"
+          }
+        ],
+        "outputs": [
+          {
+            "type": "core::bool"
+          }
+        ],
+        "state_mutability": "view"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "sxg::sxg_verifier::verifySignature::Event",
+    "kind": "enum",
+    "variants": []
+  }
+]
