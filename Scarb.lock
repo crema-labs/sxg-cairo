@@ -2,5 +2,5 @@
 version = 1
 
 [[package]]
-name = "hello_world"
+name = "sxg"
 version = "0.1.0"

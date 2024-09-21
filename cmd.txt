@@ -1,0 +1,14 @@
+ starkli declare \
+  --keystore starkli-wallet/keystore.json \
+  --account starkli-wallet/account.json \
+  --watch /home/reth/sxg-cairo/target/dev/sxg_verifySignature.contract_class.json
+
+
+https://sepolia.voyager.online/contract/0x075e9cd015e1e5b2c75b056b421f9d49d10e70ee3124195b10ae20adfcebecd8#code
+
+ starkli deploy \
+  --keystore starkli-wallet/keystore.json \
+  --account starkli-wallet/account.json \
+  --watch 0x049d50066464441bfd05f968397aeb08d7f5828ddcfb861cb30729f5adc5600d
+
+  
