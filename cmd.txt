@@ -1,14 +1,15 @@
- starkli declare \
+scarb clean && scarb build
+
+starkli declare \
   --keystore starkli-wallet/keystore.json \
   --account starkli-wallet/account.json \
-  --watch /home/reth/sxg-cairo/target/dev/sxg_verifySignature.contract_class.json
+  --watch /home/reth/sxg-cairo/target/dev/sxg_verifySignature.contract_class.json \
+  --rpc https://starknet-sepolia.g.alchemy.com/starknet/version/rpc/v0_7/L7olBYa0p1r4KX8hExzoclXd4LDyQ277
 
-
-https://sepolia.voyager.online/contract/0x075e9cd015e1e5b2c75b056b421f9d49d10e70ee3124195b10ae20adfcebecd8#code
-
- starkli deploy \
+starkli deploy \
   --keystore starkli-wallet/keystore.json \
   --account starkli-wallet/account.json \
-  --watch 0x049d50066464441bfd05f968397aeb08d7f5828ddcfb861cb30729f5adc5600d
+  --watch 0x0093d1f45d6c3bed25b0f6ef8eada8749fcb87f38646f2ddd0835b208b0eadb1
 
-  
+
+SXG VERFIFIER:= https://sepolia.voyager.online/contract/0x03f31b28b57947f14817755194cfe9e9fd2d83f27b0bb0d00c6033334923d67e#readContract

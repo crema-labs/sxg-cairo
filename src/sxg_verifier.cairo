@@ -1,6 +1,6 @@
-use super::sxg;
 use core::starknet::eth_address::EthAddress;
 use starknet::secp256_trait::{Signature};
+use super::sxg;
 
 #[starknet::interface]
 trait IVerifySignature<TContractState> {
@@ -13,7 +13,7 @@ trait IVerifySignature<TContractState> {
         self: @TContractState, eth_address: EthAddress, msg_hash: u256, r: u256, s: u256, v: u32
     );
 
-    fn sxg_verify(
+    fn sxg_verifier(
         self: @TContractState,
         finalPayload: Array<u8>,
         dataToVerify: Array<u8>,
@@ -57,7 +57,7 @@ mod verifySignature {
             verify_eth_signature(:msg_hash, :signature, :eth_address);
         }
 
-        fn sxg_verify(
+        fn sxg_verifier(
             self: @ContractState,
             finalPayload: Array<u8>,
             dataToVerify: Array<u8>,
@@ -68,7 +68,8 @@ mod verifySignature {
             r: u256,
             s: u256
         ) -> bool {
-            sxg(
+              
+              sxg(
                 finalPayload,
                 dataToVerify,
                 dataToVerifyStartIndex,
